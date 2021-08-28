@@ -1,2 +1,2 @@
-# majorak
+# Majorak
 Simple PHP templating framework.
