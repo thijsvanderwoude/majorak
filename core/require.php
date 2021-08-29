@@ -1,3 +1,4 @@
 <?php
-require_once "http/Request.php";
-require_once "http/Response.php";
+require_once "Http/Request.php";
+require_once "Http/Response.php";
+require_once "Templater/Template.php";

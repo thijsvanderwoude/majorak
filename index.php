@@ -5,6 +5,9 @@
 
 require_once "core/require.php";
 
-$request = new Request();
+use Majorak\Http\Response;
+
+$response = new Response();
+$response->setContent("Hello from Majorak 1!<br>")->setStatus(200)->send();
 
 ?>
