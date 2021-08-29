@@ -2,14 +2,16 @@
 /*
  * Template.php
  * -----------
- * Code that deals with templates and templating.
+ * Template class that allows for easy template building.
  */
 
-namespace Majorak\Templar;
+namespace Majorak\Templater;
 
 class Template {
-    function __construct() {
-        
+    protected $content;
+
+    function __construct(string $content = "") {
+        $this->content = $content;
     }
 }
 
