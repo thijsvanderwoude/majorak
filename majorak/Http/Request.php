@@ -16,7 +16,10 @@ class Request {
     }
 
     public function getUrl() {
-        return $this->server["REDIRECT_URL"];
+        if(array_key_exists("REDIRECT_URL", $this->server)) {
+            return $this->server["REDIRECT_URL"];
+        }
+        return "";
     }
 }
 
