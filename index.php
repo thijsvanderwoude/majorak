@@ -14,29 +14,28 @@ use Majorak\Http\Request;
 use Majorak\Http\Response;
 use Majorak\Templater\Template;
 
-$response = new Response();
-
 /*
  * Router
  */
 
 $routes = [
     "" => "home",
+    "/about" => "about",
     "/404" => "404"
 ];
 
 $request = new Request();
 $url = $request->getUrl();
 
-// write majorak tool that generates a switch and includes it here
+$response = new Response();
 
-foreach($routes as $route) {
-    if($route = "home") {
+// write majorak tool that generates a switch and includes it here
+switch($url) {
+    case "":
         $response->setContent("Hello from Majorak!")->send();
         exit(0);
-    }
 }
-// If we make it to this point, we don't know what has been requested. Thusly, 404.
-$response->setContent("Error 404, page not found!")->setStatus(404)->send();
 
+$response->setContent("Error 404, page not found!")->setStatus(404)->send();
+exit(0);
 ?>
