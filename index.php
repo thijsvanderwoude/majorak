@@ -1,5 +1,7 @@
 <?php
 /*
+ * index.php
+ * ---------
  * Main entry point where all pages come from.
  */
 
@@ -38,4 +40,5 @@ switch($url) {
 
 $response->setContent("Error 404, page not found!")->setStatus(404)->send();
 exit(0);
+
 ?>

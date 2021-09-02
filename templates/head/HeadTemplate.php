@@ -1,3 +1,3 @@
 <head>
-    <title><? echo "Title" ?></title>
+    <title><?php echo "Example Template"; ?></title>
 </head>
