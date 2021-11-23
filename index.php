@@ -12,7 +12,20 @@ error_reporting(E_ALL);
 /*
  * We have to set the include path right for include()/require()... to function.
  */
-set_include_path(getcwd() . '/');
+$cwd = getcwd() . '/';
+set_include_path($cwd);
+
+/*
+ * Settings
+ * !! TO DO: WRITE TOOL THAT MANAGES SETTINGS
+ */
+switch (file_exists("generated/settings.php")) {
+    case 0:
+        echo "No settings found. Please run:<br><br><code>php bin/majorak generate</code>";
+        die();
+    case 1:
+        include_once("generated/settings.php");
+}
 
 /*
  * Router
@@ -20,10 +33,25 @@ set_include_path(getcwd() . '/');
  */
 switch (file_exists("generated/routes.php")) {
     case 0:
-        echo ""
+        echo "No routes found. Please run:<br><br><code>php bin/majorak generate</code>";
+        die();
+    case 1:
+        include_once("generated/routes.php");
 
 }
-require "generated/routes.php";
+
+/*
+ * Templates
+ * !! TO DO: WRITE TOOL THAT GENERATES TEMPLATE TABLE
+ */
+switch (file_exists("generated/templates.php")) {
+    case 0:
+        echo "No routes found. Please run:<br><br><code>php bin/majorak generate</code>";
+        die();
+    case 1:
+        include_once("generated/templates.php");
+
+}
 
 require_once "majorak/require.php";
 
@@ -39,7 +67,7 @@ $response = new Response();
 
 
 ob_start();
-$eval = eval(file_get_contents("templates/template.php"));
+$eval = eval(file_get_contents("templates/example/ExampleTemplate.php"));
 $result = ob_get_contents();
 ob_end_clean();
 
