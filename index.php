@@ -9,23 +9,27 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require 'kint.phar';
-require_once "majorak/require.php";
-
-use Majorak\Http\Request;
-use Majorak\Http\Response;
-use Majorak\Templater\Template;
+/*
+ * We have to set the include path right for include()/require()... to function.
+ */
+set_include_path(getcwd() . '/');
 
 /*
  * Router
  * !! TO DO: WRITE TOOL THAT GENERATES THE ROUTES
  */
+switch (file_exists("generated/routes.php")) {
+    case 0:
+        echo ""
 
-$routes = [
-    "" => "home",
-    "/about" => "about",
-    "/404" => "404"
-];
+}
+require "generated/routes.php";
+
+require_once "majorak/require.php";
+
+use Majorak\Http\Request;
+use Majorak\Http\Response;
+use Majorak\Templater\Template;
 
 $request = new Request();
 $url = $request->getUrl();
