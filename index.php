@@ -18,6 +18,7 @@ use Majorak\Templater\Template;
 
 /*
  * Router
+ * !! TO DO: WRITE TOOL THAT GENERATES THE ROUTES
  */
 
 $routes = [
@@ -31,14 +32,27 @@ $url = $request->getUrl();
 
 $response = new Response();
 
+
+
+ob_start();
+$eval = eval(file_get_contents("templates/template.php"));
+$result = ob_get_contents();
+ob_end_clean();
+
+$response->setContent($result)->send();
+
+/*
+
 // write majorak tool that generates a switch and includes it here
 switch($url) {
     case "":
-        $response->setContent("Hello from Majorak!")->send();
+        $response->setContent("Hello from Majorak!<br><a href=\"/404\">Click here for 404!</a>")->send();
+        exit(0);
+    case "/404":
+        $response->setContent("Error 404, page not found!<br><a href=\"/\">Click here for /!</a>")->send();
         exit(0);
 }
 
-$response->setContent("Error 404, page not found!")->setStatus(404)->send();
 exit(0);
-
+*/
 ?>
