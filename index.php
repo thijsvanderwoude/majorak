@@ -19,7 +19,7 @@ set_include_path($cwd);
  * Settings
  */
 include_once("config.php");
-include_once("kint/kint.phar");
+include "kint.phar";
 
 /*
  * Templates
@@ -45,6 +45,9 @@ $url = $request->getUrl();
 
 $response = new Response();
 $route = "routes" . $url . "/index.php";
+
+d($request);
+die;
 
 switch (file_exists($route)) {
     case 0:
