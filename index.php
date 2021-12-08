@@ -46,13 +46,10 @@ $url = $request->getUrl();
 $response = new Response();
 $route = "routes" . $url . "/index.php";
 
-d($request);
-die;
-
 switch (file_exists($route)) {
     case 0:
         echo 
-        header('Location: ' . $siteName . "/404");
+        header("Location: /404");
         exit();
     case 1:
         ob_start();
