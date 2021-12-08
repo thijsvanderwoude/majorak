@@ -17,28 +17,9 @@ set_include_path($cwd);
 
 /*
  * Settings
- * !! TO DO: WRITE TOOL THAT MANAGES SETTINGS
  */
-switch (file_exists("generated/settings.php")) {
-    case 0:
-        echo "No settings found. Please run:<br><br><code>php bin/majorak generate</code>";
-        die();
-    case 1:
-        include_once("generated/settings.php");
-}
-
-/*
- * Router
- * !! TO DO: WRITE TOOL THAT GENERATES THE ROUTES
- */
-switch (file_exists("generated/routes.php")) {
-    case 0:
-        echo "No routes found. Please run:<br><br><code>php bin/majorak generate</code>";
-        die();
-    case 1:
-        include_once("generated/routes.php");
-
-}
+include_once("config.php");
+include_once("kint/kint.phar");
 
 /*
  * Templates
@@ -63,15 +44,21 @@ $request = new Request();
 $url = $request->getUrl();
 
 $response = new Response();
+$route = "routes" . $url . "/index.php";
 
+switch (file_exists($route)) {
+    case 0:
+        echo 
+        header('Location: ' . $siteName . "/404");
+        exit();
+    case 1:
+        ob_start();
+        $eval = eval(file_get_contents($route));
+        $result = ob_get_contents();
+        ob_end_clean();
 
-
-ob_start();
-$eval = eval(file_get_contents("templates/example/ExampleTemplate.php"));
-$result = ob_get_contents();
-ob_end_clean();
-
-$response->setContent($result)->send();
+        $response->setContent($result)->send();
+}
 
 /*
 
@@ -83,8 +70,8 @@ switch($url) {
     case "/404":
         $response->setContent("Error 404, page not found!<br><a href=\"/\">Click here for /!</a>")->send();
         exit(0);
-}
-
+echo "hello world!";
+die();
 exit(0);
 */
 ?>
