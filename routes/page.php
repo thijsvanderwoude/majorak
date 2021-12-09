@@ -1,0 +1,1 @@
+include "templates/example/ExampleTemplate.php";

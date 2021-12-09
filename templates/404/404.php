@@ -1,5 +1,3 @@
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,5 +9,3 @@
         <p>The page you were looking for does not exist.</p>
     </body>
 </html>
-
-<?php

@@ -44,7 +44,11 @@ $request = new Request();
 $url = $request->getUrl();
 
 $response = new Response();
-$route = "routes" . $url . "/index.php";
+
+/*
+ * Check
+ */
+$route = "routes" . $url . "/page.php";
 
 switch (file_exists($route)) {
     case 0:
