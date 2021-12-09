@@ -1,5 +1,5 @@
 <?php
 
-$siteName = "majorak.local";
+$siteName = "http://majorak.local";
 
 ?>
