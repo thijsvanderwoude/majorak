@@ -19,7 +19,7 @@ An initial Majorak install has the following:
 | ----------- | ----------- |
 | bin | Contains any CLI applications for development purposes. |
 | majorak | Contains the Majorak framework source code. |
-| .htaccess | Contains any CLI applications for development purposes. |
+| .htaccess | Apache .htaccess ruleset. |
 | KINT_LICENSE | The Kint license (MIT). |
 | kint.phar | Kint debug library |
 | LICENSE | The Majorak license (BSD 3-clause). |
@@ -27,7 +27,7 @@ An initial Majorak install has the following:
 
 After running `bin/majorak init`, it should have the following:
 
-| Directory | Description |
+| File/directory | Description |
 | ----------- | ----------- |
 | src/routes | Contains any url/route combinations. |
 | src/routes/404/404Action.php | The standard Majorak 404 route. |
