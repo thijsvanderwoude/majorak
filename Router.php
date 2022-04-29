@@ -23,33 +23,41 @@ include "kint.phar";
 require_once "majorak/require.php";
 
 use Majorak\Http\Request;
-use Majorak\Http\Response;
 
 $request = new Request();
 $url = $request->getUrl();
 
-$response = new Response();
-
 /*
- * Check
+ * Check if there is a route.
  */
-$route = "routes" . $url . "/*Action.php";
+$path = "src/routes" . $url;
 
-phpinfo();
-die();
+$directory = scandir($path);
+$potentialRoute = $path . $directory[2];
 
-switch (file_exists($route)) {
+$routeWildcard = $path . "*Action.php";
+
+switch (fnmatch($routeWildcard, $potentialRoute)) {
+    /*
     case 0:
         echo 
         header("Location: /404");
         exit();
+    */
     case 1:
+        include($potentialRoute);
+        $action = new \App\Index\IndexAction($request);
+
+        $action->execute();
+
+        /*
         ob_start();
-        $eval = eval(file_get_contents($route));
+        $eval = eval(file_get_contents($potentialRoute));
         $result = ob_get_contents();
         ob_end_clean();
 
         $response->setContent($result)->send();
+        */
 }
 
 ?>

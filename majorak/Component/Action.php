@@ -1,11 +1,11 @@
 <?php
 /*
- * majorak/Action/Action.php
+ * majorak/Component/Action.php
  * -----------
  * blabla
  */
 
-namespace Majorak\Action;
+namespace Majorak\Component;
 
 class Action {
     protected $request;
