@@ -18,9 +18,8 @@ error_reporting(E_ALL);
 $cwd = getcwd() . '/';
 set_include_path($cwd);
 
-
+// Includes (should probably be replaced with dependancy injection at some point)
 include "kint.phar";
-
 require_once "majorak/require.php";
 
 use Majorak\Http\Request;
@@ -34,7 +33,10 @@ $response = new Response();
 /*
  * Check
  */
-$route = "routes" . $url . "/page.php";
+$route = "routes" . $url . "/*Action.php";
+
+phpinfo();
+die();
 
 switch (file_exists($route)) {
     case 0:

@@ -25,7 +25,7 @@ switch($argv[1]) {
         break;
     case "run":
         echo "Majorak version 0.02.\n";
-        exec("php -S localhost:8000 router.php");
+        exec("php -S localhost:8000 Router.php");
         break;
     case "version":
         echo "Majorak version 0.02.\n";
