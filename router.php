@@ -2,7 +2,8 @@
 /*
  * index.php
  * ---------
- * Main entry point where all pages come from.
+ * Main entry point where all pages come from. Handles routing, and then jumps
+ * to an action at that route or 404's.
  */
 
 
@@ -48,4 +49,5 @@ switch (file_exists($route)) {
 
         $response->setContent($result)->send();
 }
+
 ?>
