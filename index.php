@@ -5,6 +5,8 @@
  * Main entry point where all pages come from.
  */
 
+
+// For now we just hardcode any error reporting on.
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -15,14 +17,13 @@ error_reporting(E_ALL);
 $cwd = getcwd() . '/';
 set_include_path($cwd);
 
-include_once("config.php");
+
 include "kint.phar";
 
 require_once "majorak/require.php";
 
 use Majorak\Http\Request;
 use Majorak\Http\Response;
-use Majorak\Templater\Template;
 
 $request = new Request();
 $url = $request->getUrl();

@@ -2,7 +2,7 @@
 <?php
 /*
  * This is the Majorak CLI application.
- * It is used ease development.
+ * It is used to ease development.
  */
 
 if(!isset($argv[1])) {
@@ -11,9 +11,25 @@ if(!isset($argv[1])) {
 }
 
 switch($argv[1]) {
+    case "init":
+        // Check if already initted
+        if(!is_dir("src")) {
+            exec("mkdir src");
+            exec("mkdir src/routes");
+            exec("mkdir src/a");
+            exec("mkdir src/b");
+            break;
+        }
+        
+        echo "Error: seems to have initialized already (src/ directory exists!)\n";
+        break;
     case "run":
         echo "Majorak version 0.02.\n";
-        exec("php -S localhost:8000");
+        exec("php -S localhost:8000 index.php");
+        break;
+    case "version":
+        echo "Majorak version 0.02.\n";
+        break;
 }
 
 ?>
