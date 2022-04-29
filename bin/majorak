@@ -1,13 +1,18 @@
 <?php
 /*
  * This is the Majorak CLI application.
- * It is used to manage settings, generate routes and register templates.
+ * It is used ease development.
  */
 
-/*
- * Settings
- */
+if(!isset($argv[1])) {
+    echo "Majorak version 0.02.\n";
+    return 0;
+}
 
-include(s);
+switch($argv[1]) {
+    case "run":
+        echo "Majorak version 0.02.\n";
+        exec("php -S localhost:8000");
+}
 
 ?>
