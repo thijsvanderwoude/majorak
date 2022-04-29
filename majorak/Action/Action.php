@@ -8,7 +8,11 @@
 namespace Majorak\Action;
 
 class Action {
-    protected $x;
+    protected $request;
+
+    function __construct($request) {
+        $this->request = $request;
+    }
 }
 
 ?>
