@@ -8,9 +8,11 @@
 namespace Majorak\Component;
 
 class Action {
-    protected $request;
+    protected $domain, $responder, $request;
 
-    function __construct($request) {
+    function __construct($request, $domain, $responder) {
+        $this->domain = $domain;
+        $this->responder = $responder;
         $this->request = $request;
     }
 }

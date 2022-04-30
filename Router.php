@@ -19,13 +19,10 @@ $cwd = getcwd() . '/';
 set_include_path($cwd);
 
 // Includes (should probably be replaced with dependancy injection at some point)
-include "kint.phar";
-require_once "majorak/require.php";
+require "kint.phar";
+require_once "majorak/Requires.php";
 
-use Majorak\Http\Request;
-
-$request = new Request();
-$url = $request->getUrl();
+$url = $_SERVER["PHP_SELF"];
 
 /*
  * Check if there is a route.
@@ -33,22 +30,17 @@ $url = $request->getUrl();
 $path = "src/routes" . $url;
 
 $directory = scandir($path);
-$potentialRoute = $path . $directory[2];
+$potentialRoute = $path . "/" . $directory[2];
 
 $routeWildcard = $path . "*Action.php";
 
 switch (fnmatch($routeWildcard, $potentialRoute)) {
-    /*
     case 0:
         echo 
         header("Location: /404");
         exit();
-    */
     case 1:
         include($potentialRoute);
-        $action = new \App\Index\IndexAction($request);
-
-        $action->execute();
 
         /*
         ob_start();

@@ -2,16 +2,17 @@
 /*
  * Request.php
  * -----------
- * blabla -- fill this in
+ * Code that deals with request data.
  */
 namespace Majorak\Http;
 
 class Request {
-    public function getUrl() {
-        if(array_key_exists("PHP_SELF", $_SERVER)) {
-            return $_SERVER["PHP_SELF"];
-        }
-        return "";
+    protected $get, $post, $server;
+
+    function __construct() {
+        $this->get = $_GET;
+        $this->post = $_POST;
+        $this->server = $_SERVER;
     }
 }
 
