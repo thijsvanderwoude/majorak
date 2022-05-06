@@ -6,7 +6,6 @@
  * to an action at that route or 404's.
  */
 
-
 // For now we just hardcode any error reporting on.
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -27,29 +26,21 @@ $url = $_SERVER["PHP_SELF"];
 /*
  * Check if there is a route.
  */
+
 $path = "src/routes" . $url;
 
-$directory = scandir($path);
-$potentialRoute = $path . "/" . $directory[2];
+if($path == "src/routes/") {
+    $path .= "index";
+}
 
-$routeWildcard = $path . "*Action.php";
+$doesRouteExist = chdir($path);
 
-switch (fnmatch($routeWildcard, $potentialRoute)) {
-    case 0:
-        echo 
-        header("Location: /404");
-        exit();
-    case 1:
-        include($potentialRoute);
+switch($doesRouteExist) {
+    case false:
+        break;
+    case true:
 
-        /*
-        ob_start();
-        $eval = eval(file_get_contents($potentialRoute));
-        $result = ob_get_contents();
-        ob_end_clean();
-
-        $response->setContent($result)->send();
-        */
+        include($path . substr($path, strrpos($path, "/")) . "Action.php");
 }
 
 ?>
