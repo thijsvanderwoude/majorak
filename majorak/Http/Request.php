@@ -2,7 +2,7 @@
 /*
  * Request.php
  * -----------
- * Code that deals with request data.
+ * A class that exists solely to pass along the request data.
  */
 namespace Majorak\Http;
 
@@ -13,22 +13,6 @@ class Request {
         $this->get = $_GET;
         $this->post = $_POST;
         $this->server = $_SERVER;
-    }
-
-    public function getServerName() {
-        return $this->server['SERVER_NAME'];
-    }
-
-    public function getServerPort() {
-        return $this->server['SERVER_PORT'];
-    }
-
-    public function getRequestUri() {
-        return $this->server['REQUEST_URI'];
-    }
-
-    public function getHttpHost() {
-        return $this->server['HTTP_HOST'];
     }
 }
 
