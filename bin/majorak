@@ -14,10 +14,7 @@ switch($argv[1]) {
     case "init":
         // Check if already initted
         if(!is_dir("src")) {
-            exec("mkdir src");
-            exec("mkdir src/routes");
-            exec("mkdir src/a");
-            exec("mkdir src/b");
+            exec("cp -a bin/init/src .");
             break;
         }
         
