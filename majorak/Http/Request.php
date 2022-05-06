@@ -14,6 +14,22 @@ class Request {
         $this->post = $_POST;
         $this->server = $_SERVER;
     }
+
+    public function getServerName() {
+        return $this->server['SERVER_NAME'];
+    }
+
+    public function getServerPort() {
+        return $this->server['SERVER_PORT'];
+    }
+
+    public function getRequestUri() {
+        return $this->server['REQUEST_URI'];
+    }
+
+    public function getHttpHost() {
+        return $this->server['HTTP_HOST'];
+    }
 }
 
 ?>
