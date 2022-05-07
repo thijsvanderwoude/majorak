@@ -21,11 +21,11 @@ set_include_path($cwd);
 require "kint.phar";
 require_once "majorak/Requires.php";
 
-$url = $_SERVER["PHP_SELF"];
-
 /*
  * Check if there is a route.
  */
+
+$url = $_SERVER["PHP_SELF"];
 
 $path = "src/routes" . $url;
 
@@ -39,8 +39,12 @@ switch($doesRouteExist) {
     case false:
         break;
     case true:
-
         include($path . substr($path, strrpos($path, "/")) . "Action.php");
+        $returnResponse = $action->execute();
+        
+        $response = new \Majorak\Http\Response;
+
+        $response->setContent($returnResponse)->send();
 }
 
 ?>
