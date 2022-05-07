@@ -9,7 +9,7 @@ namespace Majorak\Http;
 class Response {
     protected $content, $status;
 
-    function __construct(string $content = "", int $status = 200) {
+    public function __construct(string $content = "", int $status = 200) {
         $this->setContent($content);
         $this->setStatus($status);
     }
