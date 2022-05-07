@@ -1,7 +1,10 @@
 <?php
-require_once "Component/Action.php";
-require_once "Component/Domain.php";
-require_once "Component/DomainResponse.php";
-require_once "Component/Responder.php";
-require_once "Http/Response.php";
-require_once "Http/Request.php";
+
+include("Component/Action.php");
+include("Component/Domain.php");
+include("Component/DomainResponse.php");
+include("Component/Responder.php");
+include("Http/Response.php");
+include("Http/Request.php");
+
+?>
