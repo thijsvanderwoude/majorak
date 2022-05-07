@@ -2,10 +2,9 @@
 
 namespace App\Index;
 
-use Majorak\Component\Action;
-use Majorak\Http\Response;
+use Majorak\Component\Domain;
 
-class IndexAction extends Action {
+class indexDomain extends Domain {
     public function execute() {
         echo $_SERVER["QUERY_STRING"];
     }
