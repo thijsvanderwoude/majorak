@@ -5,12 +5,7 @@ Majorak is a minimalist, templating PHP web framework.
 
 It's [ADR](https://github.com/pmjones/adr) combined with low level control without getting in the way.
 A description of how ADR works can be found [here](https://github.com/pmjones/adr/blob/master/IMPLEMENTATION.md).
-
-In short terms:
-- ADR is a user interface pattern. Anything that has to do with reading the HTTP Request goes in the Action; anything that has to do with building the HTTP Response goes in the Responder. Everything else, then, must go in the Domain.
-- The Action receives an HTTP request. *If an Action contains any if/then blocks, try/catch blocks, loops, etc., then the Action is doing too much.*
-- The Action interacts, once or multiple times, with the Domain.
-- If it touches storage, it goes in the Domain.
+A better writeup is found [here](https://forum.archte.ch/laravel/t/pattern-action-domain-responder-adr).
 
 ### Todo's:
 - [ ] Support Nginx
