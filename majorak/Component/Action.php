@@ -10,7 +10,7 @@ namespace Majorak\Component;
 class Action {
     protected $domain, $responder, $request;
 
-    function __construct($request, $domain, $responder) {
+    public function __construct($request, $domain, $responder) {
         $this->domain = $domain;
         $this->responder = $responder;
         $this->request = $request;
