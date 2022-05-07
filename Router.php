@@ -41,7 +41,7 @@ switch($doesRouteExist) {
     case true:
         include($path . substr($path, strrpos($path, "/")) . "Action.php");
         $returnResponse = $action->execute();
-        
+        // __invoke?
         $response = new \Majorak\Http\Response;
 
         $response->setContent($returnResponse)->send();
