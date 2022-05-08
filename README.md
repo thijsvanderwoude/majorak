@@ -1,4 +1,4 @@
-# Majorak v0.1
+# Majorak v0.2
 > This is not yet production ready software. Use at your own risk.
 
 Majorak is a minimalist ADR templating PHP web framework.
@@ -8,12 +8,12 @@ A description of how ADR works can be found [here](https://github.com/pmjones/ad
 A better writeup is found [here](https://forum.archte.ch/laravel/t/pattern-action-domain-responder-adr).
 
 ### What works:
-- [x] ADR pattern
-- [x] Project initialization
-- [x] Integrated development server
+- [x] ADR pattern (v0.1)
+- [x] Project initialization (v0.1)
+- [x] Integrated development server (v0.1)
+- [ ] Templating (v0.2)
 
 ### Todo's:
-- [ ] Support templating
 - [ ] Support Nginx
 - [ ] Support i18n
 
@@ -28,8 +28,8 @@ An initial Majorak install has the following:
 | majorak | Contains the Majorak framework source code. |
 | .htaccess | Apache .htaccess ruleset. |
 | KINT_LICENSE | The Kint license (MIT). |
-| kint.phar | Kint debug library |
-| LICENSE | The Majorak license (BSD 3-clause). |
+| kint.phar | Kint debug library. |
+| LICENSE | The Majorak license (BSD 2-clause). |
 | README.md | Readme file. |
 
 After running `bin/majorak init`, it should have the following:
@@ -37,7 +37,7 @@ After running `bin/majorak init`, it should have the following:
 | File/directory | Description |
 | ----------- | ----------- |
 | src/routes | Contains any url/route combinations. |
-| src/routes/index | Contains the example application. |
+| src/routes/index | Contains the example route. |
 | src/routes/indexAction.php | The index Action component. |
 | src/routes/indexDomain.php | The index Domain component. |
 | src/routes/indexResponder.php | The index Responder component. |
