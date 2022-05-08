@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Index;
-
 use Majorak\Component\Domain;
+use Majorak\Component\DomainPayload;
 
-class indexDomain extends Domain {
-    public function execute() {
-        echo $_SERVER["QUERY_STRING"];
+class AppDomain extends Domain {
+    public function __invoke() {
+        $payload = new DomainPayload;
+        //$payload->add();
+        return $payload;
     }
 }
 

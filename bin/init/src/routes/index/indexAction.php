@@ -1,23 +1,18 @@
 <?php
 
-namespace App\Index;
-
 use Majorak\Component\Action;
-use Majorak\Http\Request;
 
 include("indexDomain.php");
 include("indexResponder.php");
 
-class indexAction extends Action {
-    public function execute() {
-        // $domainResponse = $this->domain->setRequest($request);
-        return "yes";
+class AppAction extends Action {
+    public function __invoke() {
+        $domain = new AppDomain($this->request);
+        $payload = $domain();
+
+        $responder = new AppResponder(new \Majorak\Http\Response);
+        return $responder();
     }
 }
-
-$request = new Request;
-$domain = new indexDomain;
-$responder = new indexResponder;
-$action = new indexAction($request, $domain, $responder);
 
 ?>
