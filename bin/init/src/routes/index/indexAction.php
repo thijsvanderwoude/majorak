@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 use Majorak\Component\Action;
 
 include("indexDomain.php");
