@@ -5,12 +5,29 @@
  * It is used to ease development.
  */
 
-if(!isset($argv[1])) {
+function echoVersion() {
     echo "Majorak version 0.02.\n";
-    return 0;
+}
+
+if(!isset($argv[1])) {
+    $argv[1] = "help";
 }
 
 switch($argv[1]) {
+    case "develop":
+        echoVersion();
+        exec("php -S localhost:8000 Router.php");
+        break;
+    case "help":
+        echoVersion();
+        echo "\nUsage: bin/majorak [argument(s)]\n\n";
+        echo "Argument\tDescription\n";
+        echo "---------------------------------------------------------------\n";
+        echo "help\t\tDisplays how to use the CLI app\n";
+        echo "init\t\tInitializes a basic Majorak app\n";
+        echo "run\t\tRuns a PHP development server at localhost:8000\n";
+        echo "version\t\tDisplay Majoraks version\n\n";
+        break;
     case "init":
         // Check if already initted
         if(!is_dir("src")) {
@@ -20,12 +37,8 @@ switch($argv[1]) {
         
         echo "Error: seems to have initialized already (src/ directory exists!)\n";
         break;
-    case "run":
-        echo "Majorak version 0.02.\n";
-        exec("php -S localhost:8000 Router.php");
-        break;
     case "version":
-        echo "Majorak version 0.02.\n";
+        echoVersion();
         break;
 }
 
