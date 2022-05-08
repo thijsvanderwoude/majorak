@@ -28,6 +28,14 @@ class Response {
         return $this;
     }
 
+    public function getHeaders() {
+        return headers_list();
+    }
+
+    public function setHeader(string $header) {
+        header($header);
+    }
+
     public function setStatus(int $status) {
         $this->status = $status;
         http_response_code($this->status);
