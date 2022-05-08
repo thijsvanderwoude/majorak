@@ -7,7 +7,7 @@
 namespace Majorak\Http;
 
 class Request {
-    protected $get, $post, $server;
+    public $get, $post, $server;
 
     public function __construct() {
         $this->get = $_GET;
