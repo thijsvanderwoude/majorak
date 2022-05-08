@@ -14,7 +14,7 @@ class Responder {
         \Majorak\Http\Response $response,
         \Majorak\Component\DomainPayload $payload = new \Majorak\Component\DomainPayload
     ) {
-        $this->payload = $payload;
+        $this->payload = $payload->stack;
         $this->response = $response;
     }
 }
