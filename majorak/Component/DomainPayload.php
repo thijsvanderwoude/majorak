@@ -8,7 +8,7 @@
 namespace Majorak\Component;
 
 class DomainPayload {
-    protected $stack = [];
+    public $stack = [];
 
     public function addItem($item) {
         $this->stack += $item;
