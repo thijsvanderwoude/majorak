@@ -8,12 +8,14 @@
 namespace Majorak\Component;
 
 class Action {
-    protected $domain, $responder, $request;
+    protected $domain, $responder;
 
-    public function __construct($request, $domain, $responder) {
+    public function __construct(
+        \Majorak\Component\Domain $domain,
+        \Majorak\Component\Responder $responder
+    ) {
         $this->domain = $domain;
         $this->responder = $responder;
-        $this->request = $request;
     }
 }
 
