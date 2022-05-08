@@ -23,7 +23,7 @@ class Response {
         return $this->content;
     }
 
-    public function sendContent() {
+    protected function sendContent() {
         echo $this->content;
         return $this;
     }
