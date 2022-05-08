@@ -1,15 +1,21 @@
-# Majorak
+# Majorak v0.1
 > This is not yet production ready software. Use at your own risk.
 
-Majorak is a minimalist, templating PHP web framework.
+Majorak is a minimalist ADR templating PHP web framework.
 
 It's [ADR](https://github.com/pmjones/adr) combined with low level control without getting in the way.
 A description of how ADR works can be found [here](https://github.com/pmjones/adr/blob/master/IMPLEMENTATION.md).
 A better writeup is found [here](https://forum.archte.ch/laravel/t/pattern-action-domain-responder-adr).
 
+### What works:
+- [x] ADR pattern
+- [x] Project initialization
+- [x] Integrated development server
+
 ### Todo's:
+- [ ] Support templating
 - [ ] Support Nginx
-- [ ] Actually get this working somewhat
+- [ ] Support i18n
 
 ---
 
@@ -31,11 +37,10 @@ After running `bin/majorak init`, it should have the following:
 | File/directory | Description |
 | ----------- | ----------- |
 | src/routes | Contains any url/route combinations. |
-| src/routes/404/404Action.php | The standard Majorak 404 route. |
-| src/templates | Contains any templates. |
-| src/templates/404Template.php | Contains any templates. |
-| src/templates | Contains any templates. |
-| src/templates | Contains any templates. |
+| src/routes/index | Contains the example application. |
+| src/routes/indexAction.php | The index Action component. |
+| src/routes/indexDomain.php | The index Domain component. |
+| src/routes/indexResponder.php | The index Responder component. |
 
 ---
 
