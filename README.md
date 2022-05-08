@@ -54,13 +54,13 @@ Routes are defined in the filesystem, under the `routes` directory, like the tab
 ## Majorak CLI
 Majorak aims to simplify development with a CLI application.
 
-Usage is simply `bin/majorak [argument(s)]`.
+Usage is simply `bin/majorak [argument(s)]`
 
 | Argument | Description |
 | ----------- | ----------- |
 | help | Displays how to use the CLI app |
 | init | Initializes a basic Majorak app |
-| run | Runs a PHP development server at localhost:8000 |
+| develop | Runs a PHP development server at localhost:8000 |
 | version | Display Majoraks version |
 
 ---

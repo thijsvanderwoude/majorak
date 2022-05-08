@@ -25,7 +25,7 @@ switch($argv[1]) {
         echo "---------------------------------------------------------------\n";
         echo "help\t\tDisplays how to use the CLI app\n";
         echo "init\t\tInitializes a basic Majorak app\n";
-        echo "run\t\tRuns a PHP development server at localhost:8000\n";
+        echo "develop\t\tRuns a PHP development server at localhost:8000\n";
         echo "version\t\tDisplay Majoraks version\n\n";
         break;
     case "init":
