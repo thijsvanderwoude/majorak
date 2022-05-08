@@ -12,7 +12,7 @@ class AppAction extends Action {
         $domain = new AppDomain($this->request);
         $payload = $domain();
 
-        $responder = new AppResponder(new \Majorak\Http\Response);
+        $responder = new AppResponder(new \Majorak\Http\Response, $payload);
         return $responder();
     }
 }
