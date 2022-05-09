@@ -1,9 +1,11 @@
 <?php
 
-namespace App;
+namespace Majorak\Templatery;
 
-function render(string $template, array $payload = []) {
-    include($_SERVER["DOCUMENT_ROOT"] . "/src/templates/" . $template . ".php");
+class Render{
+    public function __invoke (string $template, array $payload = []) {
+        include($_SERVER["DOCUMENT_ROOT"] . "/src/templates/" . $template . ".php");
+    }
 }
 
 ?>
