@@ -6,7 +6,7 @@
  */
 
 function echoVersion() {
-    echo "Majorak version 0.2.\n";
+    echo "Majorak version 0.3.\n";
 }
 
 if(!isset($argv[1])) {
