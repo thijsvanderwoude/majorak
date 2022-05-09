@@ -6,6 +6,6 @@ include("Component/DomainPayload.php");
 include("Component/Responder.php");
 include("Http/Response.php");
 include("Http/Request.php");
-include("Templatery/Template.php");
+include("Templatery/Render.php");
 
 ?>
