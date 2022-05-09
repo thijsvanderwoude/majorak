@@ -1,4 +1,4 @@
-# Majorak v0.2
+# Majorak v0.3
 > This is not yet production ready software. Use at your own risk.
 
 Majorak is a minimalist ADR templating PHP web framework.
@@ -42,6 +42,8 @@ After running `bin/majorak init`, it should have the following:
 | src/routes/indexAction.php | The index Action component. |
 | src/routes/indexDomain.php | The index Domain component. |
 | src/routes/indexResponder.php | The index Responder component. |
+| src/templates | Contains any templates. |
+| src/templates/indexTemplate.php | The index template. |
 
 ---
 
