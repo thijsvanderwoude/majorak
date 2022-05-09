@@ -11,7 +11,7 @@ A better writeup is found [here](https://forum.archte.ch/laravel/t/pattern-actio
 - [x] ADR pattern (v0.1)
 - [x] Project initialization (v0.1)
 - [x] Integrated development server (v0.1)
-- [ ] Templating (v0.2)
+- [x] Templating (v0.2)
 
 ### Todo's:
 - [ ] Support Nginx
