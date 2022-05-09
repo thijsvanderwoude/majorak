@@ -36,6 +36,7 @@ After running `bin/majorak init`, it should have the following:
 
 | File/directory | Description |
 | ----------- | ----------- |
+| src/ | The applications source code directory. |
 | src/routes | Contains any url/route combinations. |
 | src/routes/index | Contains the example route. |
 | src/routes/indexAction.php | The index Action component. |
