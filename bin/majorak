@@ -16,6 +16,7 @@ if(!isset($argv[1])) {
 switch($argv[1]) {
     case "develop":
         echoVersion();
+        echo "You can quit this by doing Ctrl+C.\n";
         exec("php -S localhost:8000 Router.php");
         break;
     case "help":

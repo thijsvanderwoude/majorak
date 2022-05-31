@@ -12,7 +12,7 @@ class Responder {
 
     public function __construct(
         \Majorak\Http\Response $response,
-        \Majorak\Component\DomainPayload $payload = new \Majorak\Component\DomainPayload
+        \Majorak\Component\Payload $payload = new \Majorak\Component\Payload
     ) {
         $this->payload = $payload->stack;
         $this->response = $response;

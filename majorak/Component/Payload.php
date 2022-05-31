@@ -1,13 +1,13 @@
 <?php
 /*
- * majorak/Component/DomainPayload.php
+ * majorak/Component/Payload.php
  * -----------
  * blabla
  */
 
 namespace Majorak\Component;
 
-class DomainPayload {
+class Payload {
     public $stack = [];
 
     public function addItem($item) {
